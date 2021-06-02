@@ -1,21 +1,30 @@
 <script lang="ts">
+  import router from "page";
+
+  // Include our Routes
+  import Home from "./routes/Home.svelte";
+  import Product from "./routes/Product.svelte";
+
+  let page;
+  let params;
+
+  // Set up the pages to watch for
+  router("/", () => (page = Home));
+  router(
+    "/product/:id",
+
+    // Before we set the component
+    (ctx, next) => {
+      params = ctx.params;
+      next();
+    },
+
+    // Finally set the component
+    () => (page = Product)
+  );
+
+  // Set up the router to start and actively watch for changes
+  router.start();
 </script>
 
-<main>
-  <div class="flex flex-col items-center w-screen h-screen">
-    <div class="mt-32 lg:mt-64 md:mt-48 sm:mt-48">
-      <h1 class="text-8xl font-black">ICE Smart Contract</h1>
-      <p class="mt-8 text-3xl text-gray-600">A utility to query the ICE blockchain, to get product information by id</p>
-    </div>
-    <div class="mt-16">
-      <input
-        class="w-64 h-10 rounded-lg border-2 border-black text-center text-lg italic"
-        placeholder="Product id"
-      />
-      <button
-        class="w-32 h-10 rounded-lg bg-black text-white ml-10 text-lg font-bold"
-        >Search</button
-      >
-    </div>
-  </div>
-</main>
+<svelte:component this={page} {params} />
