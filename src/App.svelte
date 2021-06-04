@@ -3,7 +3,7 @@
 
   // Include our Routes
   import Home from "./routes/Home.svelte";
-  import Product from "./routes/Product.svelte";
+  import Menu from "./routes/Menu.svelte";
 
   let page;
   let params;
@@ -11,7 +11,7 @@
   // Set up the pages to watch for
   router("/", () => (page = Home));
   router(
-    "/product/:id",
+    "/menu/:privateKey",
 
     // Before we set the component
     (ctx, next) => {
@@ -20,7 +20,7 @@
     },
 
     // Finally set the component
-    () => (page = Product)
+    () => (page = Menu)
   );
 
   // Set up the router to start and actively watch for changes
