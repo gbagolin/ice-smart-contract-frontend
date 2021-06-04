@@ -4,7 +4,7 @@
   // Include our Routes
   import Home from "./routes/Home.svelte";
   import Menu from "./routes/Menu.svelte";
-  import AddTemplate from "./routes/AddTemplate.svelte"; 
+  import AddTemplate from "./routes/AddTemplate.svelte";
 
   let page;
   let params;
@@ -36,7 +36,6 @@
     // Finally set the component
     () => (page = AddTemplate)
   );
-
 
   // Set up the router to start and actively watch for changes
   router.start();
