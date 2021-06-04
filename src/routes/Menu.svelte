@@ -48,7 +48,10 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}">Get Company</a>
+            <a
+              on:click={() => setSchemaToQuery("COMPANY")}
+              href="/get/{schemaToQuery}">Get Company</a
+            >
           </div>
           <div>
             <p class="text-2xl">Machine:</p>
@@ -64,7 +67,10 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}">Get Machine</a>
+            <a
+              on:click={() => setSchemaToQuery("MACHINE")}
+              href="/get/{schemaToQuery}">Get Machine</a
+            >
           </div>
           <div>
             <p class="text-2xl">Recipe:</p>
@@ -80,7 +86,10 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}">Get Recipe</a>
+            <a
+              on:click={() => setSchemaToQuery("RECIPE")}
+              href="/get/{schemaToQuery}">Get Recipe</a
+            >
           </div>
           <div>
             <p class="text-2xl">Recipe step:</p>
@@ -97,8 +106,10 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}"
-              >Get Recipe step</a
+            <a
+              on:click={() =>
+                setSchemaToQuery("RECIPE_STEP")}
+              href="/get/{schemaToQuery}">Get Recipe step</a
             >
           </div>
           <div>
@@ -117,7 +128,10 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}"
+            <a
+              on:click={() =>
+                setSchemaToQuery("MEASURE_CONSTRAINT")}
+              href="/get/{schemaToQuery}"
               >Get Measure Constraint</a
             >
           </div>
@@ -135,7 +149,9 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}"
+            <a 
+            on:click={() => setSchemaToQuery("PRODUCT")}
+            href="/get/{schemaToQuery}"
               >Get Product Information</a
             >
           </div>
@@ -153,7 +169,9 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}">Get Phase</a>
+            <a 
+            on:click={() => setSchemaToQuery("PHASE")}
+            href="/get/{schemaToQuery}">Get Phase</a>
           </div>
           <div>
             <p class="text-2xl">Measure</p>
@@ -169,7 +187,9 @@
           <div
             class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
           >
-            <a href="/get/{schemaToQuery}">Get Measure</a>
+            <a 
+            on:click={() => setSchemaToQuery("MEASURE")}
+            href="/get/{schemaToQuery}">Get Measure</a>
           </div>
         </div>
       </div>
