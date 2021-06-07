@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { privateKey } from "../stores/privateKey";
   import { contractAddress } from "../stores/contracAddress";
+  import { BASE_API_URL } from "../stores/baseApiName";
   import axios from "axios";
 
   export let params;
@@ -12,17 +13,33 @@
     schema.slice(1).toLowerCase();
 
   let id: string;
+
+  const MENU_URL = `/menu/${$privateKey}`;
+
+  async function sendGet() {
+    console.log(id);
+    const URL = `${BASE_API_URL}/get${schema}/${$privateKey}/${id}`;
+    const response = await axios.get(URL);
+    console.log(response.data);
+  }
 </script>
 
+<div class="my-40" />
 <main class="flex justify-center items-center">
-  <div class="my-40" />
   <div class="grid grid-cols-1 gap-10">
     <div class="flex justify-center">
+      <a
+        href={MENU_URL}
+        class="text-4xl underline text-blue-500"
+        >Back to menu</a
+      >
+    </div>
+    <div class="flex justify-center">
       <h1 class="text-6xl font-bold">
-        Get {schemaName} by Id
+        Get {schemaName.replace("_", " ")} by Id
       </h1>
     </div>
-    <div>
+    <div class="flex justify-center">
       <input
         class="w-96 h-10 rounded-lg border-2 border-black text-center text-lg italic"
         placeholder="{schemaName}'s Id"
@@ -30,7 +47,7 @@
         bind:value={id}
       />
     </div>
-    <div>
+    <div class="flex justify-center">
       <button
         class="bg-black 
         hover:bg-gray-500 
@@ -38,7 +55,8 @@
         font-bold 
         w-96 h-10
         rounded-lg 
-        cursor-pointer">Get {schemaName} by Id</button
+        cursor-pointer"
+        on:click={sendGet}>Get {schemaName} by Id</button
       >
     </div>
   </div>

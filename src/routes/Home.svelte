@@ -3,8 +3,6 @@
 
   const LOAD_CONTRACT_URL = "/menu/";
   let privateKeyString: string;
-
-  let contractAddress: string;
   let url: string;
 
   function setUrl() {

@@ -1,3 +1,3 @@
 import {writable} from 'svelte/store'
 
-export const contractAddress = writable('0xB9E8d7a8878aa84Cf8b7FD744ff4bef513Bb75aB')
+export const contractAddress = writable('0x467Ac5AEc9ea5Da340FF96DA78E0F8292B84E0cb')

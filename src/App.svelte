@@ -6,6 +6,7 @@
   import Menu from "./routes/Menu.svelte";
   import AddTemplate from "./routes/AddTemplate.svelte";
   import GetTemplate from "./routes/GetTemplate.svelte";
+  import Information from "./routes/Information.svelte";
 
   let page;
   let params;
@@ -49,6 +50,19 @@
 
     // Finally set the component
     () => (page = GetTemplate)
+  );
+
+  router(
+    "/information",
+
+    // Before we set the component
+    (ctx, next) => {
+      params = ctx.params;
+      next();
+    },
+
+    // Finally set the component
+    () => (page = Information)
   );
 
   // Set up the router to start and actively watch for changes
