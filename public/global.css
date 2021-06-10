@@ -1,8 +1,6 @@
-@windicss;
-
 body {
-  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 textarea:focus,
 input:focus {

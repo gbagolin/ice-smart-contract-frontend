@@ -53,7 +53,7 @@
   );
 
   router(
-    "/information",
+    "/information/:schema",
 
     // Before we set the component
     (ctx, next) => {
@@ -70,3 +70,14 @@
 </script>
 
 <svelte:component this={page} {params} />
+
+<style global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  element {
+    --eth-light-blue: rgb(72, 203, 217);
+    --eth-light-light-blue: rgb(121, 231, 231);
+  }
+</style>

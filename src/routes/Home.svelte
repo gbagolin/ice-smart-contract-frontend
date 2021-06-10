@@ -14,7 +14,7 @@
 <main>
   <div class="flex flex-col items-center h-screen">
     <div class="mt-32 lg:mt-64 md:mt-48 sm:mt-48">
-      <h1 class="text-8xl font-black">
+      <h1 class="text-8xl font-bold underline-text">
         ICE Smart Contract
       </h1>
       <p class="mt-8 text-3xl text-gray-600">
@@ -30,9 +30,9 @@
         bind:value={privateKeyString}
       />
       <a
-        class="ml-4 bg-black 
-        hover:bg-gray-500 
-        text-white 
+        class="ml-4 
+        hover:bg-indigo-200
+        text-black
         font-bold 
         py-3 px-8 
         rounded-lg 
@@ -43,3 +43,15 @@
     </div>
   </div>
 </main>
+
+<style>
+  .bg-eth {
+    background: rgb(121, 231, 231);
+  }
+  .border-eth {
+    border-color: rgb(121, 231, 231);
+  }
+  .underline-text {
+    text-decoration: underline rgb(121, 231, 231);
+  }
+</style>

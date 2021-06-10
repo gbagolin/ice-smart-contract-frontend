@@ -4,6 +4,7 @@
   import { contractAddress } from "../stores/contracAddress";
   import { BASE_API_URL } from "../stores/baseApiName";
   import axios from "axios";
+  import { payload } from "../stores/objectToGet";
 
   export let params;
 
@@ -18,9 +19,11 @@
 
   async function sendGet() {
     console.log(id);
-    const URL = `${BASE_API_URL}/get${schema}/${$privateKey}/${id}`;
-    const response = await axios.get(URL);
-    console.log(response.data);
+    // const URL = `${BASE_API_URL}/get${schema}/${$privateKey}/${id}`;
+    // const response = await axios.get(URL);
+    payload.set({ id: id });
+    console.log(`Payload: `, $payload);
+    // console.log(response.data);
   }
 </script>
 
@@ -48,7 +51,7 @@
       />
     </div>
     <div class="flex justify-center">
-      <button
+      <a
         class="bg-black 
         hover:bg-gray-500 
         text-white 
@@ -56,7 +59,9 @@
         w-96 h-10
         rounded-lg 
         cursor-pointer"
-        on:click={sendGet}>Get {schemaName} by Id</button
+        on:click={sendGet}
+        href="/information/{schema}"
+        >Get {schemaName} by Id</a
       >
     </div>
   </div>
