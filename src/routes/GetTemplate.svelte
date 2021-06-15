@@ -9,9 +9,10 @@
   export let params;
 
   const schema: string = params.schema;
-  const schemaName =
-    schema.charAt(0).toUpperCase() +
-    schema.slice(1).toLowerCase();
+  const schemaName: string = schema
+    .match(/[A-Z][a-z]+/g)
+    .join(" ");
+  console.log("Schema name: ", schemaName);
 
   let id: string;
 

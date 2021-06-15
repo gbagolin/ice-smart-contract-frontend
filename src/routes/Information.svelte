@@ -36,15 +36,16 @@
     console.log("API: ", API);
     console.log(params.schema);
     const response = await axios.get(API);
-    // data = flattenObject(response.data);
-    data = response.data;
+    data = flattenObject(response.data);
+    // data = response.data;
     console.log(response.data);
   });
 
   const schema: string = params.schema;
-  const schemaName: string =
-    schema.charAt(0).toUpperCase() +
-    schema.slice(1).toLowerCase();
+  const schemaName: string = schema
+    .match(/[A-Z][a-z]+/g)
+    .join(" ");
+  console.log("Schema name: ", schemaName);
 </script>
 
 {#if data === undefined}
@@ -67,18 +68,7 @@
       <div class="flex flex-col justify-center">
         {#each Object.keys(data) as key}
           <div class="text-2xl">
-            {#if typeof data[key] === "object"}
-              {#each Object.keys(data[key]) as childKey}
-                {#if typeof data[key][childKey] === "object"}
-                  {#each Object.keys(data[key][childKey]) as childChildKey}
-                    {childChildKey} : {data[key][childKey][
-                      childChildKey
-                    ]}{/each}
-                {:else}
-                  {childKey} : {data[key][childKey]}
-                {/if}
-              {/each}
-            {/if}
+            {key} : {data[key]}
           </div>
         {/each}
       </div>
