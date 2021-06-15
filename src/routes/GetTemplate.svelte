@@ -31,9 +31,7 @@
 <main class="flex justify-center items-center">
   <div class="grid grid-cols-1 gap-10">
     <div class="flex justify-center">
-      <a
-        href={MENU_URL}
-        class="text-4xl underline text-blue-500"
+      <a href={MENU_URL} class="text-lg font-bold"
         >Back to menu</a
       >
     </div>
@@ -52,12 +50,8 @@
     </div>
     <div class="flex justify-center">
       <a
-        class="bg-black 
-        hover:bg-gray-500 
-        text-white 
-        font-bold 
-        w-96 h-10
-        rounded-lg 
+        class="font-bold
+        text-lg
         cursor-pointer"
         on:click={sendGet}
         href="/information/{schema}"

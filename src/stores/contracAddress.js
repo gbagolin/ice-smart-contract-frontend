@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
 
 export const contractAddress = writable(
-  "0x3E1321400C6E47AE994d3f393F0A53982ab5faF4"
+  "0x48341Ce554B58355919f31E632405FC8D38B65eD"
 );

@@ -27,7 +27,7 @@
 
   const elementToAdd = {};
   let id = undefined;
-  
+
   async function sendPost() {
     console.log($privateKey);
     const URL = `${BASE_API_URL}/add${schema}`;
@@ -47,7 +47,11 @@
   <main class="flex justify-center">
     <div class="grid grid-cols-1 gap-10">
       <div class="flex justify-center">
-        <a href={MENU_URL} class="text-4xl underline text-blue-500">Back to menu</a>
+        <a
+          href={MENU_URL}
+          class="font-bold text-lg"
+          >Back to menu</a
+        >
       </div>
       <div class="flex justify-center">
         <h1 class="text-6xl font-bold">
@@ -70,14 +74,9 @@
       {/each}
       <div class="flex justify-center">
         <button
-          class="bg-black 
-                  hover:bg-gray-500 
-                  text-white 
-                  text-center
+          class=" 
                   font-bold 
                   text-lg
-                  w-96 h-10
-                  rounded-lg 
                   cursor-pointer"
           on:click={() => sendPost()}
           >Add {schemaName}

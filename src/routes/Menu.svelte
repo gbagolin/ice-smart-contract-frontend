@@ -21,99 +21,109 @@
         <div>
           <p class="text-2xl items-center">Company:</p>
         </div>
-        <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
-        >
+        <div class="">
           <a
             on:click={() => setSchemaToQuery("Company")}
-            href="/add/{schemaToQuery}">Add Company</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Add Company</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Company")}
-            href="/get/{schemaToQuery}">Get Company</a
+            href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Get Company</a
           >
         </div>
         <div>
           <p class="text-2xl">Machine:</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Machine")}
-            href="/add/{schemaToQuery}">Add Machine</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Add Machine</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Machine")}
-            href="/get/{schemaToQuery}">Get Machine</a
+            href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Get Machine</a
           >
         </div>
         <div>
           <p class="text-2xl">Recipe:</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Recipe")}
-            href="/add/{schemaToQuery}">Add Recipe</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Add Recipe</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Recipe")}
-            href="/get/{schemaToQuery}">Get Recipe</a
+            href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Get Recipe</a
           >
         </div>
         <div>
           <p class="text-2xl">Recipe step:</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("RecipeStep")}
-            href="/add/{schemaToQuery}">Add Recipe step</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold"
+            >Add Recipe step</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("RecipeStep")}
-            href="/get/{schemaToQuery}">Get Recipe step</a
+            href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold"
+            >Get Recipe step</a
           >
         </div>
         <div>
           <p class="text-2xl">Measure Constraint:</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() =>
               setSchemaToQuery("MeasureConstraint")}
             href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold"
             >Add Measure Constraint</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() =>
               setSchemaToQuery("MeasureConstraint")}
             href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold"
             >Get Measure Constraint</a
           >
         </div>
@@ -121,19 +131,21 @@
           <p class="text-2xl">Products</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Product")}
-            href="/add/{schemaToQuery}">Add Product</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Add Product</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
-            on:click={() => setSchemaToQuery("Product")}
+            on:click={() => setSchemaToQuery("ProductInformation")}
             href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold"
             >Get Product Information</a
           >
         </div>
@@ -141,38 +153,42 @@
           <p class="text-2xl">Phase</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Phase")}
-            href="/add/{schemaToQuery}">Add Phase</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Add Phase</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Phase")}
-            href="/get/{schemaToQuery}">Get Phase</a
+            href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Get Phase</a
           >
         </div>
         <div>
           <p class="text-2xl">Measure</p>
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Measure")}
-            href="/add/{schemaToQuery}">Add Measure</a
+            href="/add/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Add Measure</a
           >
         </div>
         <div
-          class="border-2 border-black rounded-lg w-40 h-12 hover:bg-gray-200 text-center"
+          class=""
         >
           <a
             on:click={() => setSchemaToQuery("Measure")}
-            href="/get/{schemaToQuery}">Get Measure</a
+            href="/get/{schemaToQuery}"
+            class="flex py-2 px-2 font-bold">Get Measure</a
           >
         </div>
       </div>
