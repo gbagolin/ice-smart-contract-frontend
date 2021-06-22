@@ -1,4 +1,6 @@
 <script lang="ts">
+import { menu } from "../stores/menuStore";
+
   let schemaToQuery: String;
 
   import { privateKey } from "../stores/privateKey";
@@ -6,6 +8,7 @@
   function setSchemaToQuery(schema: String) {
     schemaToQuery = schema;
     console.log($privateKey);
+    menu.set("/menuDataProvider/")
   }
 </script>
 
@@ -21,16 +24,7 @@
         <div>
           <p class="text-2xl items-center">Company:</p>
         </div>
-        <div class="">
-          <a
-            on:click={() => setSchemaToQuery("Company")}
-            href="/add/{schemaToQuery}"
-            class="flex py-2 px-2 font-bold">Add Company</a
-          >
-        </div>
-        <div
-          class=""
-        >
+        <div class="col-span-2">
           <a
             on:click={() => setSchemaToQuery("Company")}
             href="/get/{schemaToQuery}"
@@ -40,18 +34,7 @@
         <div>
           <p class="text-2xl">Machine:</p>
         </div>
-        <div
-          class=""
-        >
-          <a
-            on:click={() => setSchemaToQuery("Machine")}
-            href="/add/{schemaToQuery}"
-            class="flex py-2 px-2 font-bold">Add Machine</a
-          >
-        </div>
-        <div
-          class=""
-        >
+        <div class="col-span-2">
           <a
             on:click={() => setSchemaToQuery("Machine")}
             href="/get/{schemaToQuery}"
@@ -61,18 +44,7 @@
         <div>
           <p class="text-2xl">Recipe:</p>
         </div>
-        <div
-          class=""
-        >
-          <a
-            on:click={() => setSchemaToQuery("Recipe")}
-            href="/add/{schemaToQuery}"
-            class="flex py-2 px-2 font-bold">Add Recipe</a
-          >
-        </div>
-        <div
-          class=""
-        >
+        <div class="col-span-2">
           <a
             on:click={() => setSchemaToQuery("Recipe")}
             href="/get/{schemaToQuery}"
@@ -82,19 +54,8 @@
         <div>
           <p class="text-2xl">Recipe step:</p>
         </div>
-        <div
-          class=""
-        >
-          <a
-            on:click={() => setSchemaToQuery("RecipeStep")}
-            href="/add/{schemaToQuery}"
-            class="flex py-2 px-2 font-bold"
-            >Add Recipe step</a
-          >
-        </div>
-        <div
-          class=""
-        >
+
+        <div class="col-span-2">
           <a
             on:click={() => setSchemaToQuery("RecipeStep")}
             href="/get/{schemaToQuery}"
@@ -105,20 +66,7 @@
         <div>
           <p class="text-2xl">Measure Constraint:</p>
         </div>
-        <div
-          class=""
-        >
-          <a
-            on:click={() =>
-              setSchemaToQuery("MeasureConstraint")}
-            href="/add/{schemaToQuery}"
-            class="flex py-2 px-2 font-bold"
-            >Add Measure Constraint</a
-          >
-        </div>
-        <div
-          class=""
-        >
+        <div class="col-span-2">
           <a
             on:click={() =>
               setSchemaToQuery("MeasureConstraint")}
@@ -130,20 +78,10 @@
         <div>
           <p class="text-2xl">Products</p>
         </div>
-        <div
-          class=""
-        >
+        <div class="col-span-2">
           <a
-            on:click={() => setSchemaToQuery("Product")}
-            href="/add/{schemaToQuery}"
-            class="flex py-2 px-2 font-bold">Add Product</a
-          >
-        </div>
-        <div
-          class=""
-        >
-          <a
-            on:click={() => setSchemaToQuery("ProductInformation")}
+            on:click={() =>
+              setSchemaToQuery("ProductInformation")}
             href="/get/{schemaToQuery}"
             class="flex py-2 px-2 font-bold"
             >Get Product Information</a
@@ -152,18 +90,14 @@
         <div>
           <p class="text-2xl">Phase</p>
         </div>
-        <div
-          class=""
-        >
+        <div class="">
           <a
             on:click={() => setSchemaToQuery("Phase")}
             href="/add/{schemaToQuery}"
             class="flex py-2 px-2 font-bold">Add Phase</a
           >
         </div>
-        <div
-          class=""
-        >
+        <div class="">
           <a
             on:click={() => setSchemaToQuery("Phase")}
             href="/get/{schemaToQuery}"
@@ -173,18 +107,14 @@
         <div>
           <p class="text-2xl">Measure</p>
         </div>
-        <div
-          class=""
-        >
+        <div class="">
           <a
             on:click={() => setSchemaToQuery("Measure")}
             href="/add/{schemaToQuery}"
             class="flex py-2 px-2 font-bold">Add Measure</a
           >
         </div>
-        <div
-          class=""
-        >
+        <div class="">
           <a
             on:click={() => setSchemaToQuery("Measure")}
             href="/get/{schemaToQuery}"

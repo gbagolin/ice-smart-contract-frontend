@@ -3,10 +3,14 @@
 
   // Include our Routes
   import Home from "./routes/Home.svelte";
-  import Menu from "./routes/Menu.svelte";
+  import Menu from "./routes/MenuAdmin.svelte";
   import AddTemplate from "./routes/AddTemplate.svelte";
   import GetTemplate from "./routes/GetTemplate.svelte";
   import Information from "./routes/Information.svelte";
+  import MenuAdmin from "./routes/MenuAdmin.svelte";
+  import MenuDataProvider from "./routes/MenuDataProvider.svelte";
+  import MenuGeneralUser from "./routes/MenuGeneralUser.svelte";
+  import MenuOwner from "./routes/MenuOwner.svelte";
 
   let page;
   let params;
@@ -14,7 +18,7 @@
   // Set up the pages to watch for
   router("/", () => (page = Home));
   router(
-    "/menu/:privateKey",
+    "/menuAdmin/",
 
     // Before we set the component
     (ctx, next) => {
@@ -23,7 +27,46 @@
     },
 
     // Finally set the component
-    () => (page = Menu)
+    () => (page = MenuAdmin)
+  );
+
+  router(
+    "/menuDataProvider/",
+
+    // Before we set the component
+    (ctx, next) => {
+      params = ctx.params;
+      next();
+    },
+
+    // Finally set the component
+    () => (page = MenuDataProvider)
+  );
+
+  router(
+    "/menuGeneralUser/",
+
+    // Before we set the component
+    (ctx, next) => {
+      params = ctx.params;
+      next();
+    },
+
+    // Finally set the component
+    () => (page = MenuGeneralUser)
+  );
+
+  router(
+    "/menuOwner/",
+
+    // Before we set the component
+    (ctx, next) => {
+      params = ctx.params;
+      next();
+    },
+
+    // Finally set the component
+    () => (page = MenuOwner)
   );
 
   router(

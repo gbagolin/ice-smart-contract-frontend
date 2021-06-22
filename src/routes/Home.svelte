@@ -1,22 +1,37 @@
 <script lang="ts">
   import { privateKey } from "../stores/privateKey";
+  import axios from "axios";
+  import { BASE_API_URL } from "../stores/baseApiName";
 
-  const LOAD_CONTRACT_URL = "/menu/";
+  const LOAD_CONTRACT_URL = [
+    "/menuGeneralUser/",
+    "/menuAdmin/",
+    "/menuDataProvider/",
+    "/menuOwner/",
+  ];
   let privateKeyString: string;
   let url: string;
 
-  function setUrl() {
+  async function setUrl() {
     privateKey.set(privateKeyString);
-    url = LOAD_CONTRACT_URL + privateKeyString + "/";
+    let response = await axios.get(
+      `${BASE_API_URL}/getUserTypeMapping`
+    );
+    let userTypeMapping = response.data;
+
+    response = await axios.get(
+      `${BASE_API_URL}/getUserType/${privateKeyString}`
+    );
+    let userType = response.data["userType"];
+    let menuToNavigateTo = LOAD_CONTRACT_URL[userType];
+    url = menuToNavigateTo;
   }
 </script>
 
 <main>
   <div class="flex flex-col items-center h-screen">
     <div class="mt-32 lg:mt-64 md:mt-48 sm:mt-48">
-      <h1 class="text-8xl font-bold">
-        ICE Smart Contract
-      </h1>
+      <h1 class="text-8xl font-bold">ICE Smart Contract</h1>
       <p class="mt-8 text-3xl text-gray-600">
         A utility to query the ICE blockchain, to get
         product information.

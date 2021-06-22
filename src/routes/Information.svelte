@@ -5,10 +5,11 @@
   import axios from "axios";
   import { BASE_API_URL } from "../stores/baseApiName";
   import { each } from "svelte/internal";
+  import { menu } from "../stores/menuStore";
 
   export let params;
 
-  const MENU_URL = `/menu/${$privateKey}`;
+  const MENU_URL = `${$menu}`;
   const API = `${BASE_API_URL}/get${params.schema}/${$privateKey}/${$payload["id"]}`;
   let data: JSON = undefined;
 
@@ -61,7 +62,7 @@
       </div>
       <div class="flex justify-center">
         <h1 class="text-6xl font-bold">
-          {schemaName} Information
+          {schemaName} Data
         </h1>
       </div>
 

@@ -1,10 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { privateKey } from "../stores/privateKey";
-  import { contractAddress } from "../stores/contracAddress";
+  import { contractAddress } from "../stores/contractAddress";
   import { BASE_API_URL } from "../stores/baseApiName";
   import axios from "axios";
   import { payload } from "../stores/objectToGet";
+import { menu } from "../stores/menuStore";
 
   export let params;
 
@@ -16,7 +17,7 @@
 
   let id: string;
 
-  const MENU_URL = `/menu/${$privateKey}`;
+  const MENU_URL = `${$menu}`;
 
   async function sendGet() {
     console.log(id);

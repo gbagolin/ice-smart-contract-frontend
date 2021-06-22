@@ -3,6 +3,7 @@
   import { privateKey } from "../stores/privateKey";
   import axios from "axios";
   import { BASE_API_URL } from "../stores/baseApiName";
+  import { menu } from "../stores/menuStore";
 
   export let params;
 
@@ -23,19 +24,32 @@
     console.log(data);
   });
 
-  const MENU_URL = `/menu/${$privateKey}`;
+  const MENU_URL = `${$menu}`;
 
   const elementToAdd = {};
   let id = undefined;
+  let status = undefined;
+  let requestSent = false;
 
-  async function sendPost() {
+  async function sendRequest() {
     console.log($privateKey);
     const URL = `${BASE_API_URL}/add${schema}`;
     elementToAdd["privateKey"] = $privateKey;
     console.log(elementToAdd);
-    const response = await axios.post(URL, elementToAdd);
+    try {
+      const response = await axios.post(URL, elementToAdd);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function sendPost() {
+    const response = await sendRequest();
     console.log(response);
     id = response.data.id;
+    status = response.data.status;  
+    requestSent = true;
     // window.location.href = `/menu/${privateKey}`;
   }
 </script>
@@ -47,9 +61,7 @@
   <main class="flex justify-center">
     <div class="grid grid-cols-1 gap-10">
       <div class="flex justify-center">
-        <a
-          href={MENU_URL}
-          class="font-bold text-lg"
+        <a href={MENU_URL} class="font-bold text-lg"
           >Back to menu</a
         >
       </div>
@@ -88,6 +100,18 @@
           class="bg-green-100 py-5 text-center text-xl rounded-2xl"
         >
           {schemaName}'s id : {id}
+        </div>
+      {:else if status == 200}
+        <div
+          class="bg-green-100 py-5 text-center text-xl rounded-2xl"
+        >
+          User associated!
+        </div>
+      {:else if requestSent == true}
+        <div
+          class="bg-red-100 py-5 text-center text-xl rounded-2xl"
+        >
+          Something went wrong with the request.
         </div>
       {/if}
     </div>
