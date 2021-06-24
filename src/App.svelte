@@ -11,9 +11,20 @@
   import MenuDataProvider from "./routes/MenuDataProvider.svelte";
   import MenuGeneralUser from "./routes/MenuGeneralUser.svelte";
   import MenuOwner from "./routes/MenuOwner.svelte";
-
+  import axios from "axios";
+  import { BASE_API_URL } from "./stores/baseApiName";
+  import { contractAddress } from "./stores/contractAddress";
   let page;
   let params;
+
+  (async () => {
+    const response = await axios.get(
+      `${BASE_API_URL}/getContractAddress`
+    );
+    const address = response.data["message"];
+    console.log("Contract address: ", address);
+    contractAddress.set(address);
+  })();
 
   // Set up the pages to watch for
   router("/", () => (page = Home));
