@@ -16,6 +16,11 @@
   <div class="flex flex-col h-screen items-center">
     <div class="mt-20">
       <div class="grid grid-cols-2 gap-10">
+        <div class="col-span-2 text-center">
+          <a class="underline text-lg" href="/">
+            Back to Login 
+          </a>
+        </div>
         <div class="col-span-2">
           <h1 class="text-6xl font-bold">
             Choose an action
